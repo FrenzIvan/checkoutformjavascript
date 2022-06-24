@@ -1,0 +1,14 @@
+.check {
+	--background-color: linear-gradient(black, white);
+	display: inline-grid;
+	background-color: var(--background-color);
+}
+.container-fluid {
+	position: relative;
+
+	margin: auto;
+}
+.forms {
+	position: absolute;
+	margin-top: 5rem;
+}

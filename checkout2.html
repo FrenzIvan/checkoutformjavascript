@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=h, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="checkout.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+		<div class="container-fluid d-flex justify-content-center">
+			<h1 class="check">Checkout Form</h1>
+
+			<form action="" method="" class="forms">
+				<table>
+					<tr>
+						<td>
+							<label for="name">Name:</label>
+						</td>
+						<td>
+							<input type="text" name="name" id="fullname" size="50" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="address">Address:</label>
+						</td>
+						<td>
+							<input type="text" name="Address" id="address" size="50" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="Regions">Region:</label>
+						</td>
+						<td>
+							<select name="text" id="region">
+								<option value=""></option>
+								<option value="Region 1">Region 1</option>
+								<option value="Region 2">Region 2</option>
+								<option value="Region 3">Region 3</option>
+								<option value="Region 4">Region 4</option>
+								<option value="Region 5">Region 5</option>
+								<option value="Region 6">Region 6</option>
+								<option value="Region 7">Region 7</option>
+								<option value="Region 8">Region 8</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="contacts">Contact number:</label>
+						</td>
+						<td>
+							<input type="text" name="contactz" id="contact" size="50" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="Payment">Payment Method:</label>
+						</td>
+						<td>
+							<input
+								type="radio"
+								name="payment"
+								id="cody"
+								value="cods"
+								onclick="getRadio('Cash On Delivery')"
+							/>
+							<label for="cod">Cash on Delivery</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td>
+							<input
+								type="radio"
+								name="payment"
+								id="mcard"
+								value="mcards"
+								onclick="getRadio('Master Card')"
+							/>
+							<label form="mcard">Master Card</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input
+								type="radio"
+								name="payment"
+								id="visa"
+								value="visas"
+								onclick="getRadio('Visa')"
+							/>
+							<label form="visa">Visa</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input
+								type="radio"
+								name="payment"
+								id="ampress"
+								value="ampresss"
+								onclick="getRadio('American Express')"
+							/>
+							<label form="ampress">American Express</label>
+						</td>
+					</tr>
+				</table>
+				<div class="col-12">
+					<div class="form-check">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							value=""
+							id="invalidCheck"
+							required
+						/>
+						<label class="form-check-label" for="invalidCheck">
+							<em>Agree to terms and conditions</em>
+						</label>
+						<div class="invalid-feedback">
+							<em>You must agree before submitting.</em>
+						</div>
+					</div>
+				</div>
+				<!-- Button trigger modal -->
+				<button
+					type="button"
+					class="btn btn-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#exampleModal"
+					onclick="getForm()"
+				>
+					Submit
+				</button>
+
+				<!-- Modal -->
+				<div
+					class="modal fade"
+					id="exampleModal"
+					tabindex="-1"
+					aria-labelledby="exampleModalLabel"
+					aria-hidden="true"
+				>
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Receipt</h5>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+							</div>
+							<div class="modal-body">
+								<h1>Fullname:</h1>
+								<h4 id="dfname"></h4>
+
+								<h1>Address:</h1>
+								<h4 id="daddress"></h4>
+								<h1>Region:</h1>
+								<h4 id="dregion"></h4>
+								<h1>Contact number:</h1>
+								<h4 id="dcontact"></h4>
+								<h1>Payment method:</h1>
+								<h4 id="dpayment"></h4>
+							</div>
+							<script>
+								function getForm() {
+									let fname = document.getElementById("fullname").value;
+									let a = document.getElementById("address").value;
+									let r = document.getElementById("region").value;
+									let c = document.getElementById("contact").value;
+
+									document.getElementById("dfname").innerHTML = fname;
+									document.getElementById("daddress").innerHTML = a;
+									document.getElementById("dregion").innerHTML = r;
+									document.getElementById("dcontact").innerHTML = c;
+								}
+								function getRadio(codmcardvisaampress) {
+									// let w = document.getElementById("cody").value;
+									// let x = document.getElementById("mcard").value;
+									// let y = document.getElementById("visa").value;
+									// let z = document.getElementById("ampress").value;
+									// let gg = w + " " + x + " " + y + " " + z;
+									document.getElementById("dpayment").innerHTML = codmcardvisaampress;
+								}
+							</script>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+									Close
+								</button>
+								<button type="button" class="btn btn-warning">Print Receipt</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- end -->
+	</body>
+</html>
